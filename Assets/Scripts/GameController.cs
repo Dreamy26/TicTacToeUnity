@@ -6,12 +6,12 @@ using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
-    public int   whoseTurn; // 0 = x and 1 o 
+    public int whoseTurn; // 0 = x and 1 = o 
     public int turnCount; // counts the number of turns played
-    public GameObject[] turnIcon; // displays who turn it is
+    public GameObject[] turnIcon; // displays whos turn it is
     public Sprite[] playerIcons; // 0 = x icon and 1 = o icon
     public Button[] tictactoeSpaces; // playable space for our game
-    public int[] markSpaces;  // ID's which space was marked by which player
+    public int[] markedSpaces;  // ID's which space was marked by which player
     // Start is called before the first frame update
     void Start()
     {
@@ -25,10 +25,10 @@ public class GameController : MonoBehaviour
         turnCount = 0;
         turnIcon[0].SetActive(true);
         turnIcon[1].SetActive(false);
-        for (int i = 0; i <tictactoeSpaces.Length;i++)
+        for (int i = 0; i <tictactoeSpaces.Length; i++) // access each element of our tictactoeSpaces variable
         {
           tictactoeSpaces[i].interactable = true;
-          tictactoeSpaces[i].GetComponent<Image>().sprite = null;  
+          tictactoeSpaces[i].GetComponent<Image>().sprite = null;  // sprite = getting image of button 
         }
         for (int i = 0; i < markedSpaces.Length; i++)
         {
