@@ -11,7 +11,7 @@ public class GameController : MonoBehaviour
     public GameObject[] turnIcon; // displays whos turn it is
     public Sprite[] playerIcons; // 0 = x icon and 1 = o icon
     public Button[] tictactoeSpaces; // playable space for our game
-    public int[] markedSpaces;  // ID's which space was marked by which player
+   //public int[] markedSpaces;  // ID's which space was marked by which player
     // Start is called before the first frame update
     void Start()
     {
@@ -53,7 +53,7 @@ public class GameController : MonoBehaviour
         // Change who's turn it is 
         if (whoseTurn == 0)
         {
-            whoseTurn = 1;
+            whoseTurn = 1; // o players turn
             turnIcon[0].SetActive(false);
             turnIcon[1].SetActive(true);
         }
@@ -62,8 +62,6 @@ public class GameController : MonoBehaviour
             whoseTurn = 0;
             turnIcon[0].SetActive(true);
             turnIcon[1].SetActive(false);
-
-            
         }
     }
 }
