@@ -11,7 +11,9 @@ public class GameController : MonoBehaviour
     public GameObject[] turnIcon; // displays whos turn it is
     public Sprite[] playerIcons; // 0 = x icon and 1 = o icon
     public Button[] tictactoeSpaces; // playable space for our game
-   //public int[] markedSpaces;  // ID's which space was marked by which player
+    public int[] markedSpaces; // ID's whic space was marked by which player
+    
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -30,9 +32,9 @@ public class GameController : MonoBehaviour
           tictactoeSpaces[i].interactable = true;
           tictactoeSpaces[i].GetComponent<Image>().sprite = null;  // sprite = getting image of button 
         }
-        for (int i = 0; i < markedSpaces.Length; i++)
+         for (int i = 0; i < markedSpaces.Length; i++)
         {
-            markedSpaces[i] = -1; // change the value of the corresponding element inside this array to the value of whoseTurn it is
+            markedSpaces[i] = -100; // change the value of the corresponding element inside this array to the value of whoseTurn it is
         }
     }
 
@@ -41,15 +43,14 @@ public class GameController : MonoBehaviour
     {
         
     }
-
-    //access the button that was clicked 
-    public void TicTacToeButton(int WhichNumber)
+        //access the button that was clicked 
+    public void TicTacToeButton(int whichNumber)
     {
-        tictactoeSpaces[WhichNumber].image.sprite = playerIcons[whoseTurn];
-        tictactoeSpaces[WhichNumber].interactable = false;
+        tictactoeSpaces[whichNumber].image.sprite = playerIcons[whoseTurn];
+        tictactoeSpaces[whichNumber].interactable = false;
 
-        markedSpaces[WhichNumber] = whoseTurn; // the method used to identify which space has been marked by which player. 
-
+        markedSpaces[whichNumber] = whoseTurn + 1;
+        turnCount++;
         // Change who's turn it is 
         if (whoseTurn == 0)
         {
@@ -64,4 +65,10 @@ public class GameController : MonoBehaviour
             turnIcon[1].SetActive(false);
         }
     }
-}
+  void WinnerCheck()
+  {
+
+  }     
+}   
+
+    
