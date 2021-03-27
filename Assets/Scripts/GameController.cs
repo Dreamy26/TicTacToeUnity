@@ -67,7 +67,14 @@ public class GameController : MonoBehaviour
     }
   void WinnerCheck()
   {
-
+      int s1 = markedSpaces[0] + markedSpaces[1] + markedSpaces[2];// each element of top row of grid adding them together and storing them in the s1 variable.
+      int s2 = markedSpaces[3] + markedSpaces[4] + markedSpaces[5];
+      int s3 = markedSpaces[6] + markedSpaces[7] + markedSpaces[8];
+      int s4 = markedSpaces[0] + markedSpaces[3] + markedSpaces[6];
+      int s5 = markedSpaces[1] + markedSpaces[4] + markedSpaces[7];
+      int s6 = markedSpaces[2] + markedSpaces[5] + markedSpaces[8];
+      int s7 = markedSpaces[0] + markedSpaces[4] + markedSpaces[8];
+      int s8 = markedSpaces[0] + markedSpaces[4] + markedSpaces[6];
   }     
 }   
 
