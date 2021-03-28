@@ -43,7 +43,7 @@ public class GameController : MonoBehaviour
     {
         
     }
-        //access the button that was clicked 
+    // access the button that was clicked 
     public void TicTacToeButton(int whichNumber)
     {
         tictactoeSpaces[whichNumber].image.sprite = playerIcons[whoseTurn];
@@ -75,15 +75,16 @@ public class GameController : MonoBehaviour
       int s2 = markedSpaces[3] + markedSpaces[4] + markedSpaces[5];
       int s3 = markedSpaces[6] + markedSpaces[7] + markedSpaces[8];// bottom row
 
-      int s4 = markedSpaces[0] + markedSpaces[3] + markedSpaces[6];//vertical
+      int s4 = markedSpaces[0] + markedSpaces[3] + markedSpaces[6];// vertical
       int s5 = markedSpaces[1] + markedSpaces[4] + markedSpaces[7];
       int s6 = markedSpaces[2] + markedSpaces[5] + markedSpaces[8];
-      int s7 = markedSpaces[0] + markedSpaces[4] + markedSpaces[8];//Diagonal
+
+      int s7 = markedSpaces[0] + markedSpaces[4] + markedSpaces[8];// Diagonal
       int s8 = markedSpaces[0] + markedSpaces[4] + markedSpaces[6];
       var solutions = new int[] { s1, s2, s3, s4, s5, s6, s7, s8};
       for (int i = 0; i <solutions.Length; i++)
       {
-          if (solutions[i] == 3*(whoseTurn +1))
+          if (solutions[i] == 3 * (whoseTurn +1))
           {
               Debug.Log("Player " + whoseTurn + " WON!");
               return;
